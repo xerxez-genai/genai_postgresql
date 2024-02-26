@@ -8,7 +8,7 @@ conn = psycopg2.connect(
         password="Tanzeem@12345",
         host="localhost",
         port=5432,
-        database="genai"
+        database="generative_ai"
     )
 
 # Create a cursor object to execute SQL commands
@@ -16,7 +16,7 @@ cursor = conn.cursor()
 
 # Creating table 
 
-cursor.execute('''CREATE TABLE IF NOT EXISTS STUDENTS (NAME VARCHAR(255), CLASS VARCHAR(255), 
+cursor.execute('''CREATE TABLE IF NOT EXISTS STUDENT (NAME VARCHAR(255), CLASS VARCHAR(255), 
 SECTION VARCHAR(255));''')
 #table ="""CREATE TABLE STUDENT(NAME VARCHAR(255), CLASS VARCHAR(255), 
 #SECTION VARCHAR(255));"""
@@ -31,6 +31,7 @@ cursor.execute('''INSERT INTO STUDENT VALUES ('Mudasieer', 'Data Science', 'C')'
 # Display data inserted 
 print("Data Inserted in the table: ") 
 data=cursor.execute('''SELECT * FROM STUDENT''') 
+
 #for row in data:
 #    print(row)
 
